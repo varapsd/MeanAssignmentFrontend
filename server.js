@@ -14,5 +14,5 @@
     });
 
     // Start the app by listening on the default Heroku port
-    app.listen(4200);
+    app.listen(process.env.port || 4200);
 
