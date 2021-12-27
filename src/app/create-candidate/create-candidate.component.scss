@@ -1,0 +1,28 @@
+.createCandidate{
+    margin-top: 7%;
+    padding: 2% 3%;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    .title{
+        font-size: large;
+        font-weight: 600;
+    }
+    .inputForm{
+        label{
+            font-size: small;
+            font-weight: bold;
+            margin-bottom: 2px;
+        }
+        input:placeholder-shown{
+            font-size: 90%;
+        }
+        .loginBtn{
+            text-align: right;
+            Button{
+                margin: auto 5px;
+            }
+        }
+        .smaller{
+            font-size: x-small;
+        }
+    }
+}

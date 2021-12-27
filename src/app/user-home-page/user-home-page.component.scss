@@ -1,0 +1,20 @@
+.userHomepage{
+    margin-top: 3%;
+    .candidatesList{
+        tbody tr:nth-child(odd) {
+            background-color: #EDF6FE;
+            //color: white;
+            }
+        .icons svg{
+            margin: auto 7px;
+            cursor: pointer;
+        }
+    }
+    .row{
+        display: flex;
+        margin: 1% 1% 2% 1%;
+        p{
+            flex-grow: 1;
+        }
+    }
+}

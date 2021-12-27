@@ -1,0 +1,49 @@
+<div class="container createCandidate">
+    <h5 class="title">Create Candidate</h5>
+    <form class="g-3 inputForm" [formGroup]="candidateForm" (ngSubmit)="addCandidate()">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" formControlName="name" id="name" placeholder="enter your name" (change)="validateName()">
+              <p class="smaller text-danger">{{invalidNameMessage}}</p> 
+            </div>
+            <div class="form-group col-md-6">
+              <label for="address">Address</label>
+              <input type="email" class="form-control" formControlName="email" id="address" placeholder="enter your address" (change)="validateEmail()">
+              <p class="smaller text-danger">{{invalidEmailMessage}}</p>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="DOB">Date of Birth</label>
+              <input type="date" class="form-control" id="DOB" formControlName="DOB" placeholder="enter your date of birth" (change)="validateDOB()">
+              <p class="smaller text-danger">{{invalidDOBMessage}}</p>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="state">State</label>
+              <select class="custom-select dropdown" id="state" formControlName="state" (change)="validateState()">
+                <option value="" selected>Choose...</option>
+                <option *ngFor="let state of stateList | keyvalue" [value]="+state.key">{{ state.value }}</option>
+              </select>
+              <p class="smaller text-danger">{{invalidStateMessage}}</p>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="age">Age</label>
+              <input type="number" class="form-control" formControlName="age" [value]="age" id="age" placeholder="enter your age" readonly>
+              <p class="smaller text-danger">{{invalidAgeMessage}}</p>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="pincode">Pincode</label>
+              <input type="number" class="form-control" id="pincode" formControlName="pincode" placeholder="enter your pincode" (change)="validatePincode()">
+              <p class="smaller text-danger">{{invalidPincodeMessage}}</p>
+            </div>
+        </div>
+        <div class="mb-3 loginBtn">
+            <button class="btn btn-outline-primary" routerLink="/user">Cancel</button>
+            <button type="submit" class="btn btn-primary" *ngIf="isEdit">Update</button>
+            <button type="submit" class="btn btn-primary" *ngIf="!isEdit">Add</button>
+        </div>
+    </form>
+</div>

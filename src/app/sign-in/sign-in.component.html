@@ -1,0 +1,22 @@
+<div class="container">
+    <h5 class="title">Login</h5>
+    <form class="g-3 inputForm" [formGroup]="loginForm" (submit) = "login()">
+        <div class="mb-3">
+            <label for="emailInput" class="form-label">Email id</label>
+            <input type="email" class="form-control" formControlName="email" id="emailInput" (change)="validateEmail()" placeholder="enter your email id" required>
+            <p class="smaller text-danger">{{invalidEmailMessage}}</p>
+        </div>
+        <div class="mb-3">
+            <label for="passwordInput" class="form-label">Password</label>
+            <input type="password" class="form-control" formControlName="password" id="passwordInput" (change)="validatePassword()" placeholder="enter your password" required>
+            <p class="smaller text-danger">{{invalidPasswordMessage}}</p>
+            <p class="smaller text-primary">Minimum 8 alpha numeric value</p>
+        </div>
+        <div class="mb-3 loginBtn">
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+    </form>
+    <div class="signUpHere">
+        <p>New user ? <a routerLink="/signup">Sign Up</a> here</p>
+    </div>
+</div>
