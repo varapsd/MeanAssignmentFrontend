@@ -183,7 +183,7 @@ export class CreateCandidateComponent implements OnInit {
         this.authService.addCandidate(this.candidateForm.value).subscribe( data =>{
           console.log(data);
           if(data.status == 200){
-            alert("Added Successfully !!")
+            alert("Added Successfully !!") 
             this.router.navigate(['/user']);
           } else {
             alert(data.data);

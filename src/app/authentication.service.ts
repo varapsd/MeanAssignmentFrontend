@@ -5,7 +5,8 @@ import { HttpClient } from "@angular/common/http"
 })
 export class AuthenticationService {
 
-  private apiUrl = "http://localhost:8080/";
+  //private apiUrl = "http://localhost:8080/";
+  private apiUrl = "https://server1api.herokuapp.com/";
   constructor(private httpClient: HttpClient) { }
   login(email:any, password:any){
     return this.httpClient.post<any>(this.apiUrl+"signIn",{email:email, password:password});
